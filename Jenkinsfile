@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Package') {
 	    when{
-	       branch "master" ; branch 'release'
+		    anyOf{ branch "master" ; branch 'release' }
 	    }
             steps {
                sh 'zip -r sbdl.zip lib'
